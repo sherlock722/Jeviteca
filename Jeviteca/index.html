@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <title>Jeviteca</title>
 
+    <!--Referenciadas por CDN  (en remoto)-->
+    <!-- Bootstarp:Cargamos los estilos. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body ng-app="Jeviteca">
+
+    <div class="container">
+        <!--Cabecera-->
+        <header>
+            <h1>Jeviteca</h1>
+        </header>
+
+        <!--Barra de navegacion-->
+        <nav ng-controller="barraNavegacionCtrl">
+            <!--Se utilizan las clases de Bootstrap-->
+            <!--Lista-->
+            <ul class="nav nav-tabs">
+                <!--Elementos de la lista-->
+                <!--La directiva ngClass espera un objeto JSON-->
+                <li role = "presentation" ng-class="{'active':albumes()}">
+                    <a href="#/albumes">Álbumes</a>
+                </li>
+
+                <li role = "presentation" ng-class="{'active': bandas()}">
+                    <a href="#/bandas">Bandas</a>
+                </li>
+
+                <li role = "presentation" ng-class="{'active': generos()}">
+                <a href="#/generos">Géneros</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--Se carga la libreria de angularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js">
+    </script>
+
+    <!--Se carga el app.js-->
+    <script src="scripts/app.js">
+    </script>
 </body>
 </html>
