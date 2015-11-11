@@ -1,52 +1,44 @@
 //Se define la aplicacion
-angular.module("Jeviteca",[]);
+angular.module("Jeviteca",["ngRoute"]);
 
-//Definir la ruta de Albumes
+
 angular.module("Jeviteca").config(function($routeProvider) {
-    $routeProvider.when("/albumes", {
-        controller: "AlbumesController",
-        templateUrl: "views/Albumes.html",
+
+    //Definir la ruta de Albumes
+    $routeProvider.when("/albums", {
+        controller: "albumsController",
+        templateUrl: "views/Albums.html",
         resolve: {
-            Bands: ["AlbumesProvider",
-                function (AlbumesProvider) {
-                    return
-                    AlbumesProvider.getAlbumes();
+            Albums: ["AlbumsProvider", function (AlbumsProvider) {
+                    return AlbumsProvider.getAlbums();
                 }]
         }
     });
-});
 
-//Definir la ruta de Bandas
-angular.module("Jeviteca").config(function($routeProvider) {
-    $routeProvider.when("/bandas", {
-        controller: "BandasController",
-        templateUrl: "views/Bandas.html",
+    //Definir la ruta de Bandas
+    $routeProvider.when("/bands", {
+        controller: "bandsController",
+        templateUrl: "views/Bands.html",
         resolve: {
-            Bands: ["BandasProvider",
-                function (BandasProvider) {
-                    return
-                    BandasProvider.getBandas();
+            Bands: ["BandsProvider", function (BandsProvider) {
+                    return BandsProvider.getBands();
                 }]
         }
     });
-});
 
-//Definir la ruta de Géneros
-angular.module("Jeviteca").config(function($routeProvider) {
-    $routeProvider.when("/generos", {
-        controller: "GenerosController",
-        templateUrl: "views/Generos.html",
+    //Definir la ruta de Géneros
+    $routeProvider.when("/genres", {
+        controller: "genresController",
+        templateUrl: "views/Genres.html",
         resolve: {
-            Bands: ["BandsProvider",
-                function (GenerosProvider) {
-                    return
-                    GenerosProvider.getGeneros();
+            Genres: ["GenresProvider", function (GenresProvider) {
+                    return GenresProvider.getGenres();
                 }]
         }
     });
-});
 
-//Se configura una ruta por defecto
-$routeProvider.otherwise({
-    redirectTo: "/albumes"
+    //Se configura una ruta por defecto
+    $routeProvider.otherwise({
+        redirectTo: "/albums"
+    });
 });

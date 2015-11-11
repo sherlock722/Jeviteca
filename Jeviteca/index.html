@@ -6,7 +6,9 @@
 
     <!--Referenciadas por CDN  (en remoto)-->
     <!-- Bootstarp:Cargamos los estilos. -->
+    <!-- Bootstarp:Cargamos los estilos. Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
 </head>
 <body ng-app="Jeviteca">
 
@@ -23,27 +25,43 @@
             <ul class="nav nav-tabs">
                 <!--Elementos de la lista-->
                 <!--La directiva ngClass espera un objeto JSON-->
-                <li role = "presentation" ng-class="{'active':albumes()}">
-                    <a href="#/albumes">Álbumes</a>
+                <li role = "presentation" ng-class="{'active':rutaAlbums()}">
+                    <a href="#/albums">Álbumes</a>
                 </li>
 
-                <li role = "presentation" ng-class="{'active': bandas()}">
-                    <a href="#/bandas">Bandas</a>
+                <li role = "presentation" ng-class="{'active': rutaBands()}">
+                    <a href="#/bands">Bandas</a>
                 </li>
 
-                <li role = "presentation" ng-class="{'active': generos()}">
-                <a href="#/generos">Géneros</a>
+                <li role = "presentation" ng-class="{'active': rutaGenres()}">
+                <a href="#/genres">Géneros</a>
                 </li>
             </ul>
         </nav>
+        <section ng-view></section>
     </div>
 
-    <!--Se carga la libreria de angularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js">
-    </script>
+    <!-- Cargamos la librería de AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+    <!--Cargamos la libreria angular-route-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
 
     <!--Se carga el app.js-->
-    <script src="scripts/app.js">
-    </script>
+    <script src="scripts/app.js"></script>
+
+    <!--Se cargan los controladores-->
+    <script src="scripts/controllers/barraNavegacionCtrl.js"></script>
+    <script src="scripts/controllers/albumsController.js"></script>
+
+    <!--Se cargan los servicios-->
+    <script src="scripts/services/AlbumsProvider.js"></script>
+    <script src="scripts/services/BandsProvider.js"></script>
+    <script src="scripts/services/GenresProvider.js"></script>
+
+    <!--Se cargan las directivas-->
+    <script src="scripts/directives/elementoAlbum.js"></script>
+
+
 </body>
 </html>

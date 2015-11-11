@@ -1,19 +1,19 @@
 angular.module("Jeviteca").controller ("barraNavegacionCtrl", function ($scope,$route){
 
     //Se comprueba si la ruta navegada es /albumes
-    $scope.rutaAlbumes = function (){
+    $scope.rutaAlbums = function (){
 
-        return $route.current && $route.current.$$route.originalPath === "/albumes";
+        return $route.current && $route.current.$$route.originalPath === "/albums";
     };
     //Se comprueba si la ruta navegada es /bandas
-    $scope.rutaBandas = function (){
+    $scope.rutaBands = function (){
 
-        return $route.current && $route.current.$$route.originalPath === "/bandas";
+        return $route.current && $route.current.$$route.originalPath === "/bands";
     };
 
-    $scope.rutaGeneros = function (){
+    $scope.rutaGenres = function (){
 
-        return $route.current && $route.current.$$route.originalPath === "/generos";
+        return $route.current && $route.current.$$route.originalPath === "/genres";
     };
 
 });
