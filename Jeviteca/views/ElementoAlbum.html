@@ -2,9 +2,9 @@
     <td>
         <img ng-src="img/{{album.image}}" ng-if="album.image" alt="Imagen" width="150" class="img-rounded"/>
     </td>
-    <td><span class="text-danger">Titulo:</span> {{album.title}}</td>
-    <td><span class="text-danger">Nombre Banda:</span>{{album.band.name}}</td>
-    <td><span class="text-danger">Nombre Album:</span>{{album.genre.name}}</td>
-    <td><span class="text-danger">Lista de Canciones:</span>{{album.tracklist}}</td>
-    <td><span class="text-danger">Año:</span>{{album.year}}</td>
+    <td><span class="text-danger">Titulo:</span> {{::album.title}}</td>
+    <td><span class="text-danger">Nombre Banda:</span>{{::album.band.name}}</td>
+    <td><span class="text-danger">Nombre Album:</span>{{::album.genre.name}}</td>
+    <td><span class="text-danger">Lista de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}</td>
+    <td><span class="text-danger">Año:</span>{{::album.year}}</td>
 </tr>

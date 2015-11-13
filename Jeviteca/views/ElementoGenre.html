@@ -1,11 +1,13 @@
 <tr>
-    <td><span class="text-danger">Género: </span>{{genre.name}}</td>
+    <td><span class="text-danger">Género: </span>{{::genre.name}}
+    </td>
+
     <td>
         <ul>
             <li ng-repeat="album in genre.albums">
-                <span class="text-danger">Banda: </span>{{album.band.name}};
-                <span class="text-danger"> Titulo Album: </span>{{album.title}};
-                <span class="text-danger">Año: </span>{{album.year}};
+                <span class="text-danger">Banda: </span>{{::album.band.name}};
+                <span class="text-danger"> Titulo Album: </span>{{::album.title}};
+                <span class="text-danger">Año: </span>{{::album.year}};
             </li>
         </ul>
     </td>

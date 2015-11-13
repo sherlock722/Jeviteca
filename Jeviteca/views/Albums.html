@@ -4,10 +4,18 @@
         <h2>Albums</h2>
     </header>
 
+    <!-- Se pinta una caja de texto para filtrar por nombre de Banda. -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="filtroNombreAlbum">Nombre del Album:</label>
+            <input type="text" id="filtroNombreAlbum" ng-model="filtroNombreAlbum" />
+        </div>
+    </form>
+
     <table class="table">
 
         <!--Usamos la directiva en el elemento <tr>. Utilizamos la directiva elementoAlbum-->
-        <tr ng-repeat="album in albums"
+        <tr ng-repeat="album in albums | filter:{ title: filtroNombreAlbum }"
             elemento-album
             album="album">
         </tr>

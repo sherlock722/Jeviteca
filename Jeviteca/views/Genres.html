@@ -1,13 +1,21 @@
 <div>
     <!--Tabla-->
     <header>
-        <h2>Genres</h2>
+        <h2>Generos</h2>
     </header>
+
+    <!-- Se pinta una caja de texto para filtrar por nombre de Banda. -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="filtroNombreGenero">Nombre del Genero Musical:</label>
+            <input type="text" id="filtroNombreGenero" ng-model="filtroNombreGenero" />
+        </div>
+    </form>
 
     <table class="table">
 
         <!--Usamos la directiva en el elemento <tr>. Utilizamos la directiva elementoAlbum-->
-        <tr ng-repeat="genre in genres"
+        <tr ng-repeat="genre in genres | filter:{ name: filtroNombreGenero }"
             elemento-genre
             genre="genre">
         </tr>

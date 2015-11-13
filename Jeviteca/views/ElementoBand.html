@@ -1,10 +1,10 @@
 <tr>
-    <td><span class="text-danger">Nombre Banda: </span>{{band.name}}</td>
-    <td><span class="text-danger">Origen Banda: </span>{{band.origin}}</td>
+    <td><span class="text-danger">Nombre Banda: </span>{{::band.name}}</td>
+    <td><span class="text-danger">Origen Banda: </span>{{::band.origin}}</td>
     <td>
         <ul>
             <li ng-repeat="member in band.members">
-                <span class="text-danger">Miembro: </span> {{member.name}}</li>
+                <span class="text-danger">Miembro: </span> {{::member.name}} - <span class="text-danger">Instrumento: </span>{{::member.instruments | listaInstrumentos:member.instruments}}</li>
         </ul>
     </td>
 </tr>
