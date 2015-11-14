@@ -2,9 +2,26 @@
     <td>
         <img ng-src="img/{{album.image}}" ng-if="album.image" alt="Imagen" width="150" class="img-rounded"/>
     </td>
-    <td><span class="text-danger">Titulo:</span> {{::album.title}}</td>
+
+    <!--Se hace un link para acceder al detalle del album
+    y se lanza el evento notificarClick() definido su codigo en
+    elementoAlbum.js en el apartado del link-->
+    <td>
+        <button class="btn btn-link" ng-click="notificarClick()">
+            <span class="text-danger">Titulo Album:</span> {{::album.title}}</td>
+        </button>
+    </td>
+    <!--
+    <td><span class="text-danger">Titulo Album:</span> {{::album.title}}</td>
+    -->
+
     <td><span class="text-danger">Nombre Banda:</span>{{::album.band.name}}</td>
-    <td><span class="text-danger">Nombre Album:</span>{{::album.genre.name}}</td>
+    <td><span class="text-danger">Género:</span>{{::album.genre.name}}</td>
     <td><span class="text-danger">Lista de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}</td>
     <td><span class="text-danger">Año:</span>{{::album.year}}</td>
+    <td>
+            <span class="text-danger"> Favorito:
+                <input type="checkbox" id="favCheck" ng-model = "check" value="">
+            </span>
+    </td>
 </tr>

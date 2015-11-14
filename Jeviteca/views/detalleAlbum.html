@@ -1,0 +1,25 @@
+<!-- Este artículo hace referencia a los detalles del Album -->
+<article>
+
+    <header>
+
+        <button class="btn btn-link" ng-click="volver()">
+            Volver
+        </button>
+
+    </header>
+
+    <img ng-src="img/{{album.image}}" ng-if="album.image" alt="Imagen" width="150" class="img-rounded"/>
+
+    <h4>
+        <span class="text-danger">Nombre Banda:</span>{{album.band.name}}
+    </h4>
+    <div>
+        <span class="text-danger">Género:</span>{{album.genre.name}}
+    </div>
+
+    <div>
+        <span class="text-danger">Año:</span>{{album.year}}
+    </div>
+</article>
+

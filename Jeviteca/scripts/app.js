@@ -37,6 +37,21 @@ angular.module("Jeviteca").config(function($routeProvider) {
         }
     });
 
+    //Definir la ruta de detalle de Album
+    //Se pasa el parametro id (se hace con :)
+    $routeProvider.when ("/detalle/:id",{
+
+        controller:"detalleAlbumCtrl",
+        templateUrl: "views/detalleAlbum.html",
+        resolve: {
+            //Propiedades y dependencias (se ejecuta previa a la navegacion)
+            Album: ["AlbumsProvider", "$route", function (AlbumsProvider,$route){ //Notacion de array en linea
+                return AlbumsProvider.getAlbum($route.current.params.id);
+                //return AlbumsProvider.getAlbum(id);
+            }]
+        }
+    });
+
     //Se configura una ruta por defecto
     $routeProvider.otherwise({
         redirectTo: "/albums"

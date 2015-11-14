@@ -15,8 +15,17 @@
     <table class="table">
 
         <!--Usamos la directiva en el elemento <tr>. Utilizamos la directiva elementoAlbum-->
-        <tr ng-repeat="album in albums | filter:{ title: filtroNombreAlbum }"
+
+        <!--Para filtrar los albunes por banda se tiene que hacer como está comentado
+        <tr ng-repeat="album in albums | filter:{ band: { name: filtroNombreAlbum } }"
+        -->
+
+        <!--Se espera un JSON en el filter-->
+        <!--Creo el evento navegar y paso el id del album
+        <!--enb el albums.Controller se define el navegar(id)-->
+        <tr ng-repeat="album in albums | filter:{ title: filtroNombreAlbum  }"
             elemento-album
+            on-album-click="navegar(id)"
             album="album">
         </tr>
 
