@@ -39,7 +39,7 @@ angular.module("Jeviteca").config(function($routeProvider) {
 
     //Definir la ruta de detalle de Album
     //Se pasa el parametro id (se hace con :)
-    $routeProvider.when ("/detalle/:id",{
+    $routeProvider.when ("/detalleAlbum/:id",{
 
         controller:"detalleAlbumCtrl",
         templateUrl: "views/detalleAlbum.html",
@@ -48,6 +48,19 @@ angular.module("Jeviteca").config(function($routeProvider) {
             Album: ["AlbumsProvider", "$route", function (AlbumsProvider,$route){ //Notacion de array en linea
                 return AlbumsProvider.getAlbum($route.current.params.id);
                 //return AlbumsProvider.getAlbum(id);
+            }]
+        }
+    });
+
+    //Definir la ruta de detalle de la Banda
+    $routeProvider.when ("/detalleBand/:id",{
+
+        controller:"detalleBandCtrl",
+        templateUrl: "views/detalleBanda.html",
+        resolve: {
+            //Propiedades y dependencias (se ejecuta previa a la navegacion)
+            Band: ["BandsProvider", "$route", function (BandsProvider,$route){ //Notacion de array en linea
+                return BandsProvider.getBand($route.current.params.id);
             }]
         }
     });

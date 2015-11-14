@@ -1,5 +1,14 @@
 <tr>
+    <!--
     <td><span class="text-danger">Nombre Banda: </span>{{::band.name}}</td>
+    -->
+
+    <td>
+        <button class="btn btn-link" ng-click="notificarClick()">
+            <span class="text-danger">Nombre Banda:</span> {{::band.name}}
+        </button>
+    </td>
+
     <td><span class="text-danger">Origen Banda: </span>{{::band.origin}}</td>
     <td>
         <ul>

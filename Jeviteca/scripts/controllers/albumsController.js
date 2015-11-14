@@ -5,10 +5,9 @@ angular.module("Jeviteca").controller("albumsController",function ($scope, Album
     //Recibir la notificación para navegar al detalle del album indicado
     $scope.navegar = function (id){
 
-        //alert ("Navegar al Album" + id)
-        $location.path ("/detalle/"+id);
+        $location.path ("/detalleAlbum/"+id);
 
-    }
+    };
 
     $scope.stateChanged = function () {
         alert('test');

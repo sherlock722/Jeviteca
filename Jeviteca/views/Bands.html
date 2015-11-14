@@ -16,6 +16,7 @@
         <!--Usamos la directiva en el elemento <tr>. Utilizamos la directiva elementoAlbum-->
         <tr ng-repeat="band in bands | filter:{ name: filtroNombreBanda }"
             elemento-band
+            on-band-click="navegar(id)"
             band="band">
         </tr>
 

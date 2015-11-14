@@ -1,0 +1,42 @@
+<!-- Este artículo hace referencia a los detalles de la Banda -->
+<article>
+
+    <header>
+
+        <button class="btn btn-link" ng-click="volver()">
+            Volver
+        </button>
+
+    </header>
+
+    <div>
+        <h3>
+            <span class="text-danger">Banda:</span>{{band.name}}
+        </h3>
+    </div>
+
+    <div><span class="text-danger">Origen Banda: </span>{{::band.origin}}</div>
+    <div>
+        <span ng-repeat="member in band.members">
+           <div>
+             <span class="text-danger">Miembro: </span> {{::member.name}} - <span class="text-danger">Instrumento: </span>{{::member.instruments | listaInstrumentos:member.instruments}}
+           </div>
+        </span>
+
+    </div>
+
+        <span>
+            <h4>Albums</h4>
+        </span>
+
+
+        <span ng-repeat="album in band.albums">
+            <img ng-src="img/{{album.image}}" ng-if="album.image" alt="Imagen" width="200" class="img-rounded"/>
+        </span>
+
+
+    </div>
+
+
+
+</article>
