@@ -8,20 +8,16 @@
     elementoAlbum.js en el apartado del link-->
     <td>
         <button class="btn btn-link" ng-click="notificarClick()">
-            <span class="text-danger">Titulo Album:</span> {{::album.title}}</td>
+            <span class="text-danger">Album:</span> {{::album.title}}
         </button>
     </td>
-    <!--
-    <td><span class="text-danger">Titulo Album:</span> {{::album.title}}</td>
-    -->
-
-    <td><span class="text-danger">Nombre Banda:</span>{{::album.band.name}}</td>
+    <td><span class="text-danger">Banda:</span>{{::album.band.name}}</td>
     <td><span class="text-danger">Género:</span>{{::album.genre.name}}</td>
-    <td><span class="text-danger">Lista de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}</td>
+    <td><span class="text-danger">Listado de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}</td>
     <td><span class="text-danger">Año:</span>{{::album.year}}</td>
     <td>
-            <span class="text-danger"> Favorito:
-                <input type="checkbox" id="favCheck" ng-model = "check" value="">
-            </span>
+        <span class="text-danger"> Favorito:
+            <input type="checkbox" id="favCheck" ng-model = "checkFav" ng-change="stateChanged();">
+        </span>
     </td>
 </tr>

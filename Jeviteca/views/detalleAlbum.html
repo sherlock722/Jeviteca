@@ -9,17 +9,27 @@
 
     </header>
 
-    <img ng-src="img/{{album.image}}" ng-if="album.image" alt="Imagen" width="150" class="img-rounded"/>
+    <img ng-src="img/{{album.image}}" ng-if="album.image" alt="Imagen" width="350" class="img-rounded"/>
 
-    <h4>
-        <span class="text-danger">Nombre Banda:</span>{{album.band.name}}
-    </h4>
+    <div>
+        <h3>
+            <span class="text-danger">Album:</span>{{album.title}}
+        </h3>
+    </div>
+    <div>
+        <span class="text-danger">Banda:</span>{{album.band.name}}
+    </div>
     <div>
         <span class="text-danger">Género:</span>{{album.genre.name}}
+    </div>
+    <div>
+        <span class="text-danger">Lista de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}
     </div>
 
     <div>
         <span class="text-danger">Año:</span>{{album.year}}
     </div>
+
+
 </article>
 

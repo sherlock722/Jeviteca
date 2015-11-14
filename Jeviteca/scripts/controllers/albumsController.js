@@ -2,12 +2,15 @@ angular.module("Jeviteca").controller("albumsController",function ($scope, Album
 
     $scope.albums = Albums.data;
 
-
     //Recibir la notificación para navegar al detalle del album indicado
     $scope.navegar = function (id){
 
         //alert ("Navegar al Album" + id)
-        $location.path ("/detalle/"+id );
+        $location.path ("/detalle/"+id);
 
     }
+
+    $scope.stateChanged = function () {
+        alert('test');
+    };
 });
