@@ -9,7 +9,24 @@ angular.module("Jeviteca").controller("albumsController",function ($scope, Album
 
     };
 
-    $scope.stateChanged = function () {
-        alert('test');
+    //Check
+    $scope.stateChanged = function (valor) {
+
+        if (typeof(Storage) !== "undefined") {
+            //alert("valor:" + valor);
+
+            if(valor ==true) {
+                valor = "true";
+            } else {
+                valor = "false";
+            }
+
+            //Guardar los datos
+            localStorage.setItem("favBands", JSON.stringify(valor));
+
+            //Recuperar los datos
+            //JSON.parse(localStorage.getItem("favBands"));
+        }
+
     };
 });

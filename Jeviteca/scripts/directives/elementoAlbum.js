@@ -8,8 +8,9 @@ angular.module ("Jeviteca").directive ("elementoAlbum", function(){
         //Con scope establecemos la interfaz de comunicación
         scope:{
             album: "=", //Con "=" establecemos enlace bidireccional
-            onAlbumClick : "&"  //Con "&" establecemos notificacion desde la directiva al scope padre.
+            onAlbumClick : "&",  //Con "&" establecemos notificacion desde la directiva al scope padre.
                                 //Este onAlbumClick se hace referencia a él en Albums.html
+            onCheckClick : "&"
         },
         link: function (scope){
             //Define la interfaz de comunicacion
@@ -21,6 +22,13 @@ angular.module ("Jeviteca").directive ("elementoAlbum", function(){
                 });
 
             };
+            scope.changeCheck = function (){
+
+                scope.onCheckClick({
+                    valor: scope.checkFav
+                });
+
+            }
 
         }
 

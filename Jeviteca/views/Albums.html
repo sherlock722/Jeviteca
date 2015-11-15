@@ -26,6 +26,7 @@
         <tr ng-repeat="album in albums | filter:{ title: filtroNombreAlbum  }"
             elemento-album
             on-album-click="navegar(id)"
+            on-check-click="stateChanged(valor)"
             album="album">
         </tr>
 
