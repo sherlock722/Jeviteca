@@ -13,21 +13,21 @@
 
     <div>
         <h3>
-            <span class="text-danger">Album:</span>{{album.title}}
+            <span class="text-danger">Album:</span>{{::album.title | upperCase}}
         </h3>
     </div>
     <div>
-        <span class="text-danger">Banda:</span>{{album.band.name}}
+        <span class="text-danger">Banda:</span>{{::album.band.name}}
     </div>
     <div>
-        <span class="text-danger">Género:</span>{{album.genre.name}}
+        <span class="text-danger">Género:</span>{{::album.genre.name}}
     </div>
     <div>
         <span class="text-danger">Lista de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}
     </div>
 
     <div>
-        <span class="text-danger">Año:</span>{{album.year}}
+        <span class="text-danger">Año:</span>{{::album.year}}
     </div>
 
 

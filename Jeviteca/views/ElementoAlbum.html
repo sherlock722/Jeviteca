@@ -8,11 +8,11 @@
     elementoAlbum.js en el apartado del link-->
     <td>
         <button class="btn btn-link" ng-click="notificarClick()">
-            <span class="text-danger">Album:</span> {{::album.title}}
+            <span class="text-danger">Album:</span> {{::album.title | upperCase}}
         </button>
     </td>
     <td><span class="text-danger">Banda:</span>{{::album.band.name}}</td>
-    <td><span class="text-danger">Género:</span>{{::album.genre.name}}</td>
+    <td><span class="text-danger">Género:</span>{{::album.genre.name | firstLowerCase}}</td>
     <td><span class="text-danger">Listado de Canciones: </span>{{::album.tracklist | listaInstrumentos:album.tracklist}}</td>
     <td><span class="text-danger">Año:</span>{{::album.year}}</td>
     <td>

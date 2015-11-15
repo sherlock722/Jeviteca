@@ -14,7 +14,7 @@ angular.module("Jeviteca").controller("albumsController",function ($scope, Album
 
         if (typeof(Storage) !== "undefined") {
 
-            alert("id:" + id + "valor:" + valor);
+            //alert("id:" + id + "valor:" + valor);
             valor = valor === true ? "true" : "false";
 
             //Guardar los datos
@@ -22,7 +22,7 @@ angular.module("Jeviteca").controller("albumsController",function ($scope, Album
             localStorage.setItem(key, valor);
 
             //Recuperar los datos
-            //JSON.parse(localStorage.getItem("favBands"));
+            //localStorage.getItem(key);
         }
 
     };
