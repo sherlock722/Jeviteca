@@ -20,7 +20,6 @@ angular.module("Jeviteca").service("AlbumsProvider", function($http, $q, $filter
                 });
                 //retornamos la promesa del objeto diferido
                 return deferred.promise;
-
                 //return $http.get ("data/albums.json");
         }
 });
