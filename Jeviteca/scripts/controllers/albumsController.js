@@ -10,19 +10,16 @@ angular.module("Jeviteca").controller("albumsController",function ($scope, Album
     };
 
     //Check
-    $scope.stateChanged = function (valor) {
+    $scope.stateChanged = function (id,valor) {
 
         if (typeof(Storage) !== "undefined") {
-            //alert("valor:" + valor);
 
-            if(valor ==true) {
-                valor = "true";
-            } else {
-                valor = "false";
-            }
+            alert("id:" + id + "valor:" + valor);
+            valor = valor === true ? "true" : "false";
 
             //Guardar los datos
-            localStorage.setItem("favBands", JSON.stringify(valor));
+            var key = "favBands" + id
+            localStorage.setItem(key, valor);
 
             //Recuperar los datos
             //JSON.parse(localStorage.getItem("favBands"));

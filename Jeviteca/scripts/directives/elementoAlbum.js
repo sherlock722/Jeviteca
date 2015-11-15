@@ -25,6 +25,7 @@ angular.module ("Jeviteca").directive ("elementoAlbum", function(){
             scope.changeCheck = function (){
 
                 scope.onCheckClick({
+                    id: scope.album.id,
                     valor: scope.checkFav
                 });
 
